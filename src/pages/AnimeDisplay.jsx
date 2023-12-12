@@ -149,7 +149,7 @@ export const AnimeDisplay = () => {
                   <div>
                     {index < 12 && (
                       <div className="h-[250px] w-[120px]">
-                        <Link to={`/anime/${item?.id}`} target="_top">
+                        <Link to={`/anime/${item?.id}`} target="_parent">
                           <img
                             src={
                               item.name === "Death Note"
@@ -160,7 +160,7 @@ export const AnimeDisplay = () => {
                             className=" rounded-lg h-[180px] w-[120px] hover:brightness-75 hover:cursor-pointer"
                           />
                         </Link>
-                        <Link to={`/anime/${item?.id}`} target="_top">
+                        <Link to={`/anime/${item?.id}`} target="_parent">
                           <p className="text-xs font-bold mt-1 hover:text-red-500 hover:cursor-pointer">
                             {item.name.length <= 25
                               ? item.name
