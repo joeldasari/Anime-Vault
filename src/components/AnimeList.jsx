@@ -156,7 +156,7 @@ export const AnimeList = () => {
 
       {!loading && (
         <div>
-          <div className="flex justify-end mr-[12vw] pb-4">
+          <div className="flex justify-end pr-[12vw] pb-4 max-sm:pr-0 max-sm:justify-center">
             <select
               name="pagelist"
               id="list"
