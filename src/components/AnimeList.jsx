@@ -107,7 +107,7 @@ export const AnimeList = () => {
         </p>
       </div>
       {loading ? (
-        <div className="flex justify-center p-10 h-[85vh] max-sm:h-[80vh]">
+        <div className="flex justify-center p-10 h-[90vh] max-sm:h-[80vh]">
           <img
             src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca.gif"
             alt="loading"
