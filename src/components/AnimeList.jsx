@@ -177,7 +177,7 @@ export const AnimeList = () => {
             </select>
           </div>
           <div className="flex justify-center">
-            <div className="flex w-[80vw] flex-wrap gap-2 pb-10">
+            <div className="flex w-[85vw] flex-wrap gap-2 pb-10">
               {[...Array(100)].map((_, index) => (
                 <button
                   onClick={() => loadmore(index + addIndex)}
