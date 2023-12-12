@@ -19,11 +19,8 @@ export const AnimeDisplay = () => {
         const resultSimilar = await axios.get(
           `${BaseURL}/api/animes/${animeID}/similar`
         );
-        console.log(result.data);
         setAnime(result.data);
-        console.log(resultRoles.data);
         setRoles(resultRoles.data);
-        console.log(resultSimilar.data);
         setSimilar(resultSimilar.data);
       } catch (err) {
         console.log(err.message);

@@ -18,7 +18,6 @@ export const AnimeList = () => {
         const result = await axios.get(
           `${BaseURL}/api/animes?page=1&limit=10&order=popularity`
         );
-        console.log(result.data);
         setAnime(result.data);
       } catch (err) {
         console.log(err.message);
@@ -37,9 +36,7 @@ export const AnimeList = () => {
       const result = await axios.get(
         `${BaseURL}/api/animes?page=${no}&limit=10&order=popularity`
       );
-      console.log(result.data);
       setAnime(result.data);
-      console.log(anime);
     } catch (err) {
       console.log(err.message);
     } finally {
