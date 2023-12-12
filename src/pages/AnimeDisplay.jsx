@@ -1,6 +1,5 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const BaseURL = "https://shikimori.one";
 export const AnimeDisplay = () => {
@@ -9,7 +8,6 @@ export const AnimeDisplay = () => {
   const [roles, setRoles] = useState([]);
   const [similar, setSimilar] = useState([]);
   const { animeID } = useParams();
-  const navigate = useNavigate();
   useEffect(() => {
     const fetchAnime = async () => {
       try {
@@ -35,10 +33,6 @@ export const AnimeDisplay = () => {
     };
     fetchAnime();
   }, []);
-  const handleClick = (id) => {
-    navigate(`/anime/${id}`);
-    window.location.reload();
-  };
   return (
     <div className="flex justify-center items-center py-5 ">
       {loading === false ? (
@@ -155,24 +149,24 @@ export const AnimeDisplay = () => {
                   <div>
                     {index < 12 && (
                       <div className="h-[250px] w-[120px]">
-                        <img
-                          src={
-                            item.name === "Death Note"
-                              ? "https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg"
-                              : `${BaseURL}/${item.image?.original}`
-                          }
-                          alt="image"
-                          className=" rounded-lg h-[180px] w-[120px] hover:brightness-75 hover:cursor-pointer"
-                          onClick={() => handleClick(item?.id)}
-                        />
-                        <p
-                          className="text-xs font-bold mt-1 hover:text-red-500 hover:cursor-pointer"
-                          onClick={() => handleClick(item?.id)}
-                        >
-                          {item.name.length <= 25
-                            ? item.name
-                            : item.name.slice(0, 25) + "..."}
-                        </p>
+                        <Link to={`/anime/${item?.id}`} target="_top">
+                          <img
+                            src={
+                              item.name === "Death Note"
+                                ? "https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg"
+                                : `${BaseURL}/${item.image?.original}`
+                            }
+                            alt="image"
+                            className=" rounded-lg h-[180px] w-[120px] hover:brightness-75 hover:cursor-pointer"
+                          />
+                        </Link>
+                        <Link to={`/anime/${item?.id}`} target="_top">
+                          <p className="text-xs font-bold mt-1 hover:text-red-500 hover:cursor-pointer">
+                            {item.name.length <= 25
+                              ? item.name
+                              : item.name.slice(0, 25) + "..."}
+                          </p>
+                        </Link>
                       </div>
                     )}
                   </div>
