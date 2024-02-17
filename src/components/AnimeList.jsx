@@ -91,7 +91,7 @@ export const AnimeList = () => {
         </div>
         <div>
           <img
-            src="https://aniwatch.to/images/anw-min.webp"
+            src="https://aniwatchtv.to/images/anw-min.webp"
             alt="poster"
             className="h-[60vh] max-sm:h-[20vh]"
           />
